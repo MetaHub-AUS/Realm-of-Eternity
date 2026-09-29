@@ -45,7 +45,7 @@ def main():
         lo = Vector((min(p.x for p in pts), min(p.y for p in pts), min(p.z for p in pts)))
         hi = Vector((max(p.x for p in pts), max(p.y for p in pts), max(p.z for p in pts)))
         center, size = (lo + hi) / 2, max(hi - lo)
-        cam = SC.orbit_camera(center, size * 3.1, 20.0, 32.0, lens=60.0, name=f"CAM_Sheet_{key}")
+        cam = SC.orbit_camera(center, size * 2.05, 20.0, 32.0, lens=60.0, name=f"CAM_Sheet_{key}")
         scene.camera = cam
         path = os.path.join(os.path.dirname(args.out), f"_sheet_{key}.png")
         scene.render.filepath = path
